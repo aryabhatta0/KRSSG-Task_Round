@@ -16,19 +16,19 @@ void NaoBehavior::beam( double& beamX, double& beamY, double& beamAngle ) {
 
 SkillType NaoBehavior::selectSkill() {
 
-    return newStrategy();    
+
+    return defendStrategy();
 }
+   
 
-SkillType NaoBehavior::newStrategy(){
-
-    if (me.getDistanceTo(ball) > 1) {
-            // Walk to ball
-            return goToTarget(ball);
-    } 
+SkillType NaoBehavior::defendStrategy() {
+    
+    if (me.getDistanceTo(ball) > 5) {
+        // Just stand in place
+        return SKILL_STAND;
+    }
     else {
-            // Kick ball towards opponent's goal
-            return kickBall(KICK_DRIBBLE, VecPosition(HALF_FIELD_X, 0, 0));
-        }
+        // Kick ball towards opponent's goal
+        return kickBall(KICK_DRIBBLE, VecPosition(HALF_FIELD_X, 0, 0));
+    }
 }
-
-
