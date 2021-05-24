@@ -7,14 +7,17 @@ Task-Round-Submission
 # TASK - 1
 
 Run "casino.py"
+
 Run "player.py" in other 3 terminals.
 //Game will start.. and will ask for future game (Y/N) at the end.
 
 # Task1 - Bonus
 
 Run "bonus_casino.py"
+
 Then, Run "bonus_client.py"
 //Enter details of game like no. of player & rounds for game.
+
 Run "bonus_player.py" in as many asno. of player terminal.
 //Game will start.. Enjoy :)
 
@@ -27,7 +30,8 @@ Enter t.
 Enter respective inputs.
 ** Input queue should be enterred one by one, like:
 '''
-1
+1  (Enter)
+
 1
 1
 1
@@ -42,12 +46,14 @@ Enter respective inputs.
 # Task2 - Bonus
 
 Run "traffic_server.py"
+
 Enter t.
 
 Then, Run "traffic_client.py" in 4 terminals.  
 //one for each side (A,B,C,D). ** The first terminal opened will automatically considered as A & so on..
 
 Enter inputs at each client.
+
 ** Here, Enter all the 2 input for a side at once like: 1 1
 
 
