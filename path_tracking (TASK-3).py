@@ -58,10 +58,13 @@ class TurtleBot:
         for point in self.path:
 
             goal_pose.x = point[0] / 30
+            goal_pose.y = (300 - point[1]) / 30
+            '''
             if point[1] < 150:
                 goal_pose.y = point[1] / 30 + 10
             else:
                 goal_pose.y = point[1] / 30 - 10
+            '''
 
             while self.euclidean_distance(goal_pose) >= distance_tolerance:
 
