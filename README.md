@@ -85,21 +85,17 @@ Copy the file "path_tracking (TASK-3).py" from GitHub to (TASK-3/catkin_ws/src/t
 
 //as I have modified a small thing (x,y co-ordinates) after uploading zip otherwise, it will go out of bound for turtlesim window.
 
-STEPS to MOVE the TURTLE:
+## STEPS to MOVE the TURTLE:
 
 > Run Part-1's "RRT_StarConnect.py" as said above 
-
 > roscore
-
 //run this command in terminal
 
 > rosrun turtlesim turtlesim_node  
 //in other terminal
 
 > cd into "catkin_ws" dir (provided in zip) & run:
-
 > source devel/setup.bash
-
 > cd into "catkin_ws/src"
 
 > rosrun turtlesim_cleaner path_tracking (TASK-3).py
