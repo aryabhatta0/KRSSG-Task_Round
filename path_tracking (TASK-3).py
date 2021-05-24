@@ -8,7 +8,7 @@ import socket
 
 class TurtleBot:
 
-    def __init__(self, path):
+    def __init__(self, path,turtle):
         # Creates a node with name 'turtlebot_controller' and make sure it is a
         # unique node (using anonymous=True).
         rospy.init_node('turtlebot_controller', anonymous=True)
@@ -26,6 +26,7 @@ class TurtleBot:
         self.rate = rospy.Rate(10)
 
         self.path = path
+        self.turtle = turtle 
 
     def update_pose(self, data):
         """Callback function which is called when a new message of type Pose is
@@ -85,6 +86,8 @@ class TurtleBot:
 
                 # Publish at the desired rate.
                 self.rate.sleep()
+                
+                self.turtle.send(str(point).encode())
 
             # Stopping our robot after the movement is over.
             vel_msg.linear.x = 0
@@ -108,7 +111,7 @@ if __name__ == '__main__':
         print("Outside Class: ",path)
 
 
-        x = TurtleBot(path)
+        x = TurtleBot(path,turtle)
         x.move2goal()
     except rospy.ROSInterruptException:
         pass
