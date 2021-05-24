@@ -223,7 +223,7 @@ def show_path(tree,vertex,current_node,final_node, img, flag= 0):
     path = []
     t = 0
     while current_node != final_node:
-        #t += 1
+        t += 1
         #print(t)
         
         try:
