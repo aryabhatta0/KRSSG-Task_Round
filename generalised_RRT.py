@@ -1,5 +1,5 @@
 #parameters
-max_iteration = 5000
+max_iteration = 10000
 Step = 10
 search_radius = 20
 dist_away = 10       #how much pixel to be away from obstacle
