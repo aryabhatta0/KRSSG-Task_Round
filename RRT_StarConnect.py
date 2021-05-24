@@ -229,7 +229,7 @@ def show_path(tree,vertex,current_node,final_node, img, flag= 0):
         try:
             x1,y1 = current_node.index
             if t%3 ==0:                        #not selecting all index
-                path.append((x1,y1))
+                path.append((y1,x1))
         except:
             return img, path
         
