@@ -323,4 +323,16 @@ print('Connected with turtle' + addr[0] + "  " + str(addr[1]))
 print("Path:",path)
 turtle.send(str(path).encode())
 
+while True:
+    point = turtle.recv(1024).decode()
+    point = eval(point)
+    point = (point[1],point[0])
+    
+    img[point][0] = 255
+    img[point][1] = 0
+    img[point][2] = 0
+    
+    cv2.imshow("My Win", img)
+    cv2.waitKey(1)
+    
 cv2.destroyAllWindows()
