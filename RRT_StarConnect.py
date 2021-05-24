@@ -218,16 +218,17 @@ def extend(tree,vertex, x_rand):
 
     return x_new, "TRAPPED"        #Trapped means obstacle in the way
 
-path = []
+#path = []
 def show_path(tree,vertex,current_node,final_node, img, flag= 0):
-    t = 0
+    path = []
+    #t = 0
     while current_node != final_node:
-        t += 1
+        #t += 1
         #print(t)
         
         try:
             x1,y1 = current_node.index
-            if t%5 ==0:                        #not selecting all index
+            if t%3 ==0:                        #not selecting all index
                 path.append((x1,y1))
         except:
             return img, path
@@ -246,7 +247,7 @@ def show_path(tree,vertex,current_node,final_node, img, flag= 0):
         
         current_node = current_node.parent
 
-    return img
+    return img, path
 
 def connect(tree,vertex,x_new):
     _, msg = extend(tree,vertex,x_new)
@@ -287,9 +288,12 @@ def RRTStar_Connect(start, end, img):
         if msg != "TRAPPED":
             if connect(tree2,vertex2,x_new) == "REACHED":
                 print("Goal found... Total iteration:",n)
-                img = show_path(tree1,vertex1, tree1[vertex1.index(x_new)],start_node, img,0)
-                img = show_path(tree2,vertex2, tree2[vertex2.index(x_new)],end_node, img,1)
-                return img
+                img,path1 = show_path(tree1,vertex1, tree1[vertex1.index(x_new)],start_node, img,0)
+                path1.reverse()
+                img,path2 = show_path(tree2,vertex2, tree2[vertex2.index(x_new)],end_node, img,1)
+                for item in path2:
+                    path1.append(item)
+                return img, path1
 
         #tree1, tree2 = swap(tree1,tree2)
         #vertex1, vertex2 = swap(vertex1,vertex2)
@@ -299,7 +303,7 @@ def RRTStar_Connect(start, end, img):
     img = show_path(tree1, vertex1, tree1[vertex1.index(nearest(vertex1,end))],start_node, img)
     return img     
 
-img = RRTStar_Connect(start, end,img)
+img, path = RRTStar_Connect(start, end,img)
 
 cv2.namedWindow("My Win", cv2.WINDOW_NORMAL)
 cv2.imshow("My Win", img)
