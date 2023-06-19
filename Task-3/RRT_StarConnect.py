@@ -10,7 +10,7 @@ import math
 import random
 import socket
 
-img = cv2.imread("image1.png",1)
+img = cv2.imread("images/image1.png", 1)
 img = cv2.resize(img, (300,300))
 l,m,_ = img.shape
 print(l,m)

@@ -1,113 +1,78 @@
-Task-Round-Submission
+## Task-Round-Submission
 
-# Imp. points
-* In Task-3 Keep the image file name in cv2.imread() accordingly
-* Keep changing port no. if failed to connect in socket programming tasks.
+Following are the instructions to run the code:
 
 # TASK - 1
 
-Run "casino.py"
+1. Run `casino.py`.
+2. Run `player.py` in 3 other terminals.
 
-Run "player.py" in other 3 terminals.
-//Game will start.. and will ask for future game (Y/N) at the end.
+The game will start and will ask for a future game (Y/N) at the end.
 
-# Task1 - Bonus
+**NOTE:** Try changing port number if failed to connect in socket programming tasks.
 
-Run "bonus_casino.py"
+## Task1 - Bonus
 
-Then, Run "bonus_client.py"
-//Enter details of game like no. of player & rounds for game.
+1. Run `bonus_casino.py`.
+2. Run `bonus_client.py`.
 
-Run "bonus_player.py" in as many asno. of player terminal.
-//Game will start.. Enjoy :)
+    Enter details of the game, such as the number of players and the number of rounds.
 
+3. Run `bonus_player.py` in as many terminals as the number of players.
+
+The game will start. Enjoy!
 
 # TASK - 2
 
-Run "FSM_traffic.py"
+1. Run `FSM_traffic.py`.
+2. Enter the number of time steps (`t`).
+3. Enter the inputs, one by one. For example, if the inputs are `1 2 3 4`, you would enter `1`, then `2`, then `3`, and then `4`.
 
-Enter t.
-Enter respective inputs.
-** Input queue should be enterred one by one, like:
-'''
-1  (Enter)
+The traffic will be cleared in the lowest number of time steps possible, avoiding accumulation of cars on any side.
 
-1
-1
-1
-1
-1
-1
-1
-& not as: 1 1 1 1 1 1 1 1 
-'''
-//Traffic will be cleared in lowest time step possible avoiding accumulation of cars on any side.
+## Task2 - Bonus
 
-# Task2 - Bonus
+1. Run `traffic_server.py`.
+2. Enter the number of time steps (`t`).
+3. Run `traffic_client.py` in 4 terminals.
+4. Enter the inputs at each client in order. For example, if the inputs for side A are `1 2` and the inputs for side B are `3 4`, you would enter `1 2` in the first terminal and `3 4` in the second terminal.
 
-Run "traffic_server.py"
+The traffic will be cleared in the lowest number of time steps possible.
 
-Enter t.
+# TASK 3
 
-Then, Run "traffic_client.py" in 4 terminals.  
-//one for each side (A,B,C,D). ** The first terminal opened will automatically considered as A & so on..
+## Part 1 (Path Planning)
 
-Enter inputs at each client.
+1. Run `RRT_StarConnect.py` (with the first image)
 
-** Here, Enter all the 2 input for a side at once like: 1 1
+    - The path will be generated. This generally takes 500-1000 iterations.
+    - The number of iterations will be displayed on the output screen, so you can see that the algorithm is running.
 
+2. Run `generalised_RRT.py` (with 2nd generalized image)
 
-# TASK 3 
+    - Enter start and end (int). This is based on the distance from the origin (0,0).
+    - The path will take more time to generate, about 5000+ iterations.
 
-# Part - 1 (Path Planning)
+## Part 2 (Turtlesim)
 
-## Please run the one on GitHub 
-## or, change the parameter Step to 10 & search_radius to 20 in Zip File uploaded through form.
-//as I manipulated this after uploading zip, otherwise it will take lot of time.
+1. Copy the file `path_tracking (TASK-3).py` from GitHub to the `catkin_ws/src/turtlesim_cleaner/src` directory in the zip file.
 
-(i) 
-Run "RRT_StarConnect.py (with 1st image in task doc)
+Steps to move the turtle:
 
-//Path will be generated.. It generally takes 500-1000 iterations.
+2. Run `RRT_StarConnect.py` as described above.
+3. Run `roscore` in a terminal.
+4. Run `rosrun turtlesim turtlesim_node` in another terminal.
+5. cd to the `catkin_ws` directory and run `source devel/setup.bash`.
+6. cd into `catkin_ws/src` directory and run `rosrun turtlesim_cleaner turtle_path_tracking-Task3`.
 
-//On output screen, it shows no. of iterations so that we can see that our algo is running. :)
-
-(ii)
-Run "generalised_RRT.py" (with 2nd image in doc)
-
-Enter start & end (int).    //it's on the basis of distance from origin (0,0)
-
-//It will take more time to generate the path, i guess.. Takes approx 5000+ iterations
-
-# Part - 2 (Turtlesim)
-
-Copy the file "path_tracking (TASK-3).py" from GitHub to (TASK-3/catkin_ws/src/turtlesim_cleaner/src/path_tracking (TASK-3).py) in zip.
-
-//as I have modified a small thing (x,y co-ordinates) after uploading zip otherwise, it will go out of bound for turtlesim window.
-
-## STEPS to MOVE the TURTLE:
-
-> Run Part-1's "RRT_StarConnect.py" as said above 
-> roscore
-//run this command in terminal
-
-> rosrun turtlesim turtlesim_node  
-//in other terminal
-
-> cd into "catkin_ws" dir (provided in zip) & run:
-> source devel/setup.bash
-> cd into "catkin_ws/src"
-
-> rosrun turtlesim_cleaner path_tracking (TASK-3).py
-** "RRT_StarConnect.py" should keep running while following above
-
-// can rename this path_tracking file if faced any problem b/c of space in name.
-
+The `RRT_StarConnect.py` file should continue running while you follow these steps.
 
 # TASK 5
 
-Run "attacker" & "defender" files following the usual commands to run the robosoccer simulation::
+This task is based on the [UTAustinVilla3D](https://github.com/LARG/utaustinvilla3d) codebase for the RoboCup Soccer Simulation 3D.
 
-> rcssserver3d
-> ./roboviz.sh  (in roboviz terminal)
-> ./start.sh   (in both the attacker & defender terminal)
+Run the `attacker` and `defender` files following the usual commands to run the robosoccer simulation:
+
+1. Run `rcssserver3d`.
+2. Run `./roboviz.sh` in the `roboviz` terminal.
+3. Run `./start.sh` in both the `attacker` and `defender` terminals.

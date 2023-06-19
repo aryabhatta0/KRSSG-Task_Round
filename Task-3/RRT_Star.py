@@ -9,7 +9,7 @@ import math
 import socket
 
 #loading image
-img = cv2.imread("img.jpg",1)
+img = cv2.imread("images/image1.png", 1)
 img = cv2.resize(img, (300,300))
 l,m,_ = img.shape 
 

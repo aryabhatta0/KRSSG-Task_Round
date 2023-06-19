@@ -8,7 +8,7 @@ import cv2
 import math
 import random
 
-img = cv2.imread("task3.2.png",1)
+img = cv2.imread("images/image2.png", 1)
 img = cv2.resize(img, (300,300))
 l,m,_ = img.shape
 print(l,m)
