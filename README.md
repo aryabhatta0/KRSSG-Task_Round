@@ -55,17 +55,15 @@ The traffic will be cleared in the lowest number of time steps possible.
 
 ## Part 2 (Turtlesim)
 
-1. Copy the file `path_tracking (TASK-3).py` from GitHub to the `catkin_ws/src/turtlesim_cleaner/src` directory in the zip file.
-
 Steps to move the turtle:
 
-2. Run `RRT_StarConnect.py` as described above.
-3. Run `roscore` in a terminal.
-4. Run `rosrun turtlesim turtlesim_node` in another terminal.
-5. cd to the `catkin_ws` directory and run `source devel/setup.bash`.
-6. cd into `catkin_ws/src` directory and run `rosrun turtlesim_cleaner turtle_path_tracking-Task3`.
+1. Run `RRT_StarConnect.py` as described above.
+2. Run `roscore` in a terminal.
+3. Run `rosrun turtlesim turtlesim_node` in another terminal.
+4. cd to the `catkin_ws` directory and run `source devel/setup.bash`.
+5. cd into `catkin_ws/src` directory and run `rosrun turtlesim_cleaner turtle_path_tracking-Task3`.
 
-The `RRT_StarConnect.py` file should continue running while you follow these steps.
+The `RRT_StarConnect.py` file should continue running while you follow above steps.
 
 # TASK 5
 
