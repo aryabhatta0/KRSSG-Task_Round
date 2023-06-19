@@ -1,3 +1,5 @@
+# Initial implementation without FSM structure
+
 t = int(input("t = "))
 
 #indexes whose car can be allowed to go
